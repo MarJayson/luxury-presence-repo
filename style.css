@@ -1,0 +1,136 @@
+/************************************************************************************* General */
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/************************************************************************************* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 1000;
+  transition: background 0.3s ease-in-out;
+}
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.logo span {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-left: 4px;
+  color: #c7a27c;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: #c7a27c;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+.menu-toggle i {
+  transition: transform 0.3s ease;
+}
+.menu-toggle.active i {
+  transform: rotate(90deg);
+}
+
+/*****************************************************************************  Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("images/hero-img.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3)
+  );
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.hero h1 span {
+  display: block;
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin-top: -10px;
+  color: #c7a27c;
+}
+.hero p {
+  margin: 1rem 0 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.btn {
+  background: #c7a27c;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #a8836f;
+}
+
+/********************************************************************************* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
