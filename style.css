@@ -1,12 +1,13 @@
-/************************************************************************************* General */
+/* GENERAL */
 * {
   margin: 0;
-  border: 0;
+  padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
-/************************************************************************************* Navbar */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -16,23 +17,28 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 5%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   z-index: 1000;
-  transition: background 0.3s ease-in-out;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
+  backdrop-filter: blur(10px);
 }
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 .logo {
   font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
+  color: white;
 }
 .logo span {
   font-family: "Great Vibes", cursive;
-  font-size: 1.3rem;
-  font-weight: 400;
-  margin-left: 4px;
+  font-size: 1.4rem;
   color: #c7a27c;
 }
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -41,28 +47,22 @@
 .nav-links li a {
   text-decoration: none;
   color: white;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  transition: color 0.3s;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
 }
 .nav-links li a:hover {
   color: #c7a27c;
+  transform: translateY(-2px);
 }
+
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
   color: white;
   cursor: pointer;
-  z-index: 1001;
-}
-.menu-toggle i {
-  transition: transform 0.3s ease;
-}
-.menu-toggle.active i {
-  transform: rotate(90deg);
 }
 
-/*****************************************************************************  Hero Section */
+/* HERO SECTION */
 .hero {
   position: relative;
   height: 100vh;
@@ -72,6 +72,7 @@
   justify-content: center;
   color: white;
   text-align: center;
+  overflow: hidden;
 }
 .hero::before {
   content: "";
@@ -79,8 +80,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom right,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.3)
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.2)
   );
   z-index: 1;
 }
@@ -92,8 +93,8 @@
 }
 .hero h1 {
   font-family: "Playfair Display", serif;
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 .hero h1 span {
@@ -105,25 +106,29 @@
   color: #c7a27c;
 }
 .hero p {
-  margin: 1rem 0 2rem;
-  font-family: "Poppins", sans-serif;
+  margin: 1.2rem 0 2rem;
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
+
 .btn {
   background: #c7a27c;
   color: white;
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2.2rem;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 5px 15px rgba(199, 162, 124, 0.4);
+  transition: all 0.3s ease;
 }
 .btn:hover {
   background: #a8836f;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(199, 162, 124, 0.5);
 }
 
-/********************************************************************************* Animation */
+/* ANIMATION */
 @keyframes fadeIn {
   from {
     opacity: 0;
